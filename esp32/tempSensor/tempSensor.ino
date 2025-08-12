@@ -25,23 +25,27 @@ void setup() {
   lcd.backlight();
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("TempSense v0.1");
+  lcd.print("TempSense v1.1");
 }
 
 void loop() {
   sensors.requestTemperatures(); // Send command to get temperatures
-  float tempC = sensors.getTempCByIndex(0); // Get temp in °C for first sensor
-
+  float tempC1 = sensors.getTempCByIndex(0); // Get temp in °C for first sensor
+  float tempC2 = sensors.getTempCByIndex(1);
   //Serial.print("Temperature: ");
   //Serial.print(tempC);
   //Serial.println(" °C");
   delay(100);
   lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Temp. : ");
-  lcd.print(tempC);
+  lcd.print("Temp.1 : ");
+  lcd.print(tempC1);
+  lcd.print(" C");
+  lcd.setCursor(0, 1);
+  lcd.print("Temp.2 : ");
+  lcd.print(tempC2);
   lcd.print(" C");
 
 
-  delay(10000);
+  delay(1000);
 }
