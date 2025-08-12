@@ -18,7 +18,7 @@ I2C_LCD lcd(0x27);
 
 void setup() {
   Serial.begin(9600);
-  sensors.begin(); // Start up the library
+  sensors.begin();
 
   Wire.begin(6, 7);
   lcd.begin();
@@ -30,7 +30,7 @@ void setup() {
 
 void loop() {
   sensors.requestTemperatures(); // Send command to get temperatures
-  float tempC1 = sensors.getTempCByIndex(0); // Get temp in °C for first sensor
+  float tempC1 = sensors.getTempCByIndex(0);
   float tempC2 = sensors.getTempCByIndex(1);
   //Serial.print("Temperature: ");
   //Serial.print(tempC);
